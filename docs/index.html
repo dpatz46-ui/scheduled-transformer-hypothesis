@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Scheduled Transformer — Dustin Patzer</title>
+  <meta name="description" content="The Scheduled Transformer hypothesis proposes that transformer computation proceeds through a reproducible sequence of depth-indexed state regimes. Proposed by Dustin Patzer, Independent Researcher.">
+  <meta name="author" content="Dustin Patzer">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://dpatz46-ui.github.io/scheduled-transformer-hypothesis/">
+  <link rel="stylesheet" href="style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The Scheduled Transformer">
+  <meta property="og:description" content="A hypothesis of depth-indexed state regimes in pre-RMSNorm language models.">
+  <meta property="og:url" content="https://dpatz46-ui.github.io/scheduled-transformer-hypothesis/">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "The Scheduled Transformer",
+    "url": "https://dpatz46-ui.github.io/scheduled-transformer-hypothesis/",
+    "author": {
+      "@type": "Person",
+      "name": "Dustin Patzer",
+      "jobTitle": "Independent Researcher"
+    },
+    "datePublished": "2026-09-22",
+    "sameAs": "https://github.com/dpatz46-ui/scheduled-transformer-hypothesis"
+  }
+  </script>
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+  <a class="brand" href="index.html">The Scheduled Transformer</a>
+  <nav>
+    <a href="proposal.html">Proposal</a>
+    <a href="preliminary-status.html">Evidence status</a>
+    <a href="experiment-plan.html">Experiment plan</a>
+    <a href="https://github.com/dpatz46-ui/scheduled-transformer-hypothesis">GitHub</a>
+  </nav>
+</div></header>
+<main>
+  <h1>The Scheduled Transformer</h1>
+  <p class="subtitle">A Hypothesis of Depth-Indexed State Regimes in Pre-RMSNorm Language Models</p>
+  <p class="byline"><strong>Dustin Patzer</strong> · Independent Researcher</p>
+  <p class="statusline">Public research statement · Version 0.1.0 · 22 September 2026</p>
+
+  <p class="lede">I propose the <strong>Scheduled Transformer hypothesis</strong>: modern pre-normalized transformer language models do not merely apply a succession of nominally similar residual transformations. Rather, computation proceeds through a reproducible, ordered sequence of <strong>depth-indexed state regimes</strong>.</p>
+
+  <div class="callout"><strong>Core statement.</strong> Transformer computation proceeds through a reproducible sequence of depth-indexed state regimes, with each successive transformation acting upon an inherited state shaped by the preceding trajectory.</div>
+
+  <p>The narrow claim concerns the geometry of the residual stream across depth. Let <em>x</em><sub>i,p,l</sub> denote the residual-stream state for example <em>i</em>, token position <em>p</em>, and depth <em>l</em>. Its radial coordinate is:</p>
+  <div class="equation">r<sub>i,p,l</sub> = ‖x<sub>i,p,l</sub>‖ &nbsp;&nbsp;&nbsp; and, where useful, &nbsp;&nbsp;&nbsp; y<sub>i,p,l</sub> = log r<sub>i,p,l</sub>.</div>
+
+  <p>The proposed object is <strong>not merely residual-norm growth</strong>. Prior work has already observed depth-dependent residual norms and growth. The Scheduled Transformer hypothesis instead treats the <strong>ordered sequence of layer-conditioned state distributions and transition regimes itself</strong> as the object of study: centres, widths, shapes, overlaps, persistence, reorganization, contraction and expansion, and reproducible context-conditioned departures.</p>
+
+  <p>Preliminary analysis of primary activation data <strong>strongly indicates support</strong> for the hypothesis. Systematic formalization and confirmatory testing are underway. The public materials deliberately separate the theory, the preliminary evidentiary status, and the pre-specified experimental program.</p>
+
+  <div class="cards">
+    <a class="card" href="proposal.html"><strong>Full hypothesis statement</strong><span class="small">The theory, formal definitions, scope, sub-schedules, and confirmatory program.</span></a>
+    <a class="card" href="preliminary-status.html"><strong>Preliminary evidentiary status</strong><span class="small">What present analyses support, what remains provisional, and what is not yet claimed.</span></a>
+    <a class="card" href="experiment-plan.html"><strong>Planned empirical evaluation</strong><span class="small">The extraction regime, observables, prompt suites, validation criteria, and falsification pressure.</span></a>
+  </div>
+
+  <h2>Scope</h2>
+  <p>The hypothesis does not claim that residual radius alone represents meaning, that a transformer explicitly reads residual magnitude as a numerical depth coordinate, or that all contextual differentiation must appear radially. Direction, subspace structure, and other geometric properties remain available to carry differentiated relational content.</p>
+
+  <p>The narrower proposal is that residual states occupy structured, depth-dependent regimes and that transformer computation proceeds through their ordered traversal.</p>
+
+  <hr>
+  <p class="small">Preferred citation pending DOI: Dustin Patzer, <em>The Scheduled Transformer: A Hypothesis of Depth-Indexed State Regimes in Pre-RMSNorm Language Models</em>, version 0.1.0 (2026).</p>
+</main>
+<footer>
+  <p>© 2026 Dustin Patzer. Substantive research content is released under CC BY-NC 4.0; discovery/citation-facing material under CC BY 4.0. See the repository license for details.</p>
+  <p><a href="https://github.com/dpatz46-ui/scheduled-transformer-hypothesis">Repository</a></p>
+</footer>
+</body>
+</html>

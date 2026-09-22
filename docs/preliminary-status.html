@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scheduled Transformer — Preliminary Evidentiary Status</title>
+  <meta name="description" content="Preliminary evidentiary status of the Scheduled Transformer hypothesis: present support, provisional claims, and limits.">
+  <meta name="author" content="Dustin Patzer">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://dpatz46-ui.github.io/scheduled-transformer-hypothesis/preliminary-status.html">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+  <a class="brand" href="index.html">The Scheduled Transformer</a>
+  <nav>
+    <a href="proposal.html">Proposal</a>
+    <a href="preliminary-status.html">Evidence status</a>
+    <a href="experiment-plan.html">Experiment plan</a>
+    <a href="https://github.com/dpatz46-ui/scheduled-transformer-hypothesis">GitHub</a>
+  </nav>
+</div></header>
+<main>
+  <h1>Preliminary Evidentiary Status</h1>
+  <p class="subtitle">What is presently supported, what remains provisional, and what is not yet claimed</p>
+  <p class="byline"><strong>Dustin Patzer</strong> · Independent Researcher</p>
+
+  <div class="callout"><strong>Status.</strong> Preliminary primary-data work strongly indicates support for the Scheduled Transformer hypothesis. The systematic confirmatory regime is not yet complete.</div>
+
+  <h2>What the present work indicates</h2>
+  <p>Across several previously collected activation datasets and model families, residual-state trajectories exhibit reproducible depth structure richer than simple monotonic norm growth. Candidate supporting phenomena include:</p>
+  <ul>
+    <li>depth-specific radial distributions or bands;</li>
+    <li>substantial changes in distributional width over depth;</li>
+    <li>repeated radial contraction and expansion;</li>
+    <li>persistence and reorganization of relative state positions;</li>
+    <li>candidate context-conditioned departures from a dominant trajectory.</li>
+  </ul>
+
+  <h2>What is already technically validated</h2>
+  <p>The planned full-vector extraction methodology has been smoke-tested on the official base checkpoint of Llama 3.2 3B. For the 28-block model, the extraction preserves 29 persistent residual boundaries together with attention and MLP branch writes. Hook-based reconstruction showed exact captured continuity between adjacent block boundaries and branch reconstruction errors on the order expected from FP16 execution.</p>
+
+  <h2>What remains provisional</h2>
+  <p>The preliminary datasets were not all acquired under one frozen, uniform protocol. Some are legacy activation archives with different token selections or model-specific boundaries. Context-conditioned sub-schedules, in particular, require deliberate replication under a pre-specified criterion rather than post hoc visual interpretation.</p>
+
+  <p>The formal study therefore treats the existing observations as <strong>motivating and supporting evidence</strong>, not as a substitute for systematic confirmation.</p>
+
+  <h2>What is not claimed</h2>
+  <ul>
+    <li>Residual radius is not asserted to encode semantic content by itself.</li>
+    <li>The model is not asserted to explicitly read radius as a numerical depth coordinate.</li>
+    <li>Every context is not expected to produce a distinct radial sub-schedule.</li>
+    <li>The existence of depth-dependent norm growth alone is not claimed as novel.</li>
+    <li>Mechanistic explanations for how or why a schedule forms remain separate from the narrow empirical hypothesis.</li>
+  </ul>
+
+  <h2>Current epistemic posture</h2>
+  <p>The theory is being proposed strongly because it is falsifiable and because preliminary primary-data work indicates that the relevant structure exists. The empirical program is being pursued to determine how broadly that structure replicates, which features are architecture-general, which are task-conditioned, and which preliminary interpretations should be revised.</p>
+
+  <p class="small">Repository source: <a href="https://github.com/dpatz46-ui/scheduled-transformer-hypothesis/blob/main/PRELIMINARY_STATUS.md">PRELIMINARY_STATUS.md</a>.</p>
+</main>
+<footer>
+  <p>© 2026 Dustin Patzer. Substantive research content: CC BY-NC 4.0.</p>
+  <p><a href="index.html">Home</a> · <a href="proposal.html">Hypothesis statement</a></p>
+</footer>
+</body>
+</html>

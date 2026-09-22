@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scheduled Transformer — Planned Empirical Evaluation</title>
+  <meta name="description" content="Planned confirmatory evaluation of the Scheduled Transformer hypothesis: full residual-state extraction, 516 primary prompts, radial schedule analysis, and sub-schedule tests.">
+  <meta name="author" content="Dustin Patzer">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://dpatz46-ui.github.io/scheduled-transformer-hypothesis/experiment-plan.html">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header"><div class="header-inner">
+  <a class="brand" href="index.html">The Scheduled Transformer</a>
+  <nav>
+    <a href="proposal.html">Proposal</a>
+    <a href="preliminary-status.html">Evidence status</a>
+    <a href="experiment-plan.html">Experiment plan</a>
+    <a href="https://github.com/dpatz46-ui/scheduled-transformer-hypothesis">GitHub</a>
+  </nav>
+</div></header>
+<main>
+  <h1>Planned Empirical Evaluation</h1>
+  <p class="subtitle">Pre-specified extraction and analysis regime for the Scheduled Transformer hypothesis</p>
+  <p class="byline"><strong>Dustin Patzer</strong> · Independent Researcher</p>
+
+  <h2>Primary reference model</h2>
+  <p>The initial clean reference is the official base checkpoint <code>meta-llama/Llama-3.2-3B</code>, a dense pre-RMSNorm decoder model. The validated runtime uses FP16 execution without quantization and eager attention for inspectable module hooks.</p>
+
+  <h2>Residual-state acquisition</h2>
+  <p>For transformer block <em>l</em>, the planned acquisition preserves:</p>
+  <div class="equation">x<sub>l</sub><sup>pre</sup>, &nbsp; Δ<sub>l</sub><sup>A</sup>, &nbsp; x<sub>l</sub><sup>mid</sup>, &nbsp; Δ<sub>l</sub><sup>M</sup>, &nbsp; x<sub>l</sub><sup>out</sup></div>
+  <p>with the identities:</p>
+  <div class="equation">x<sub>l</sub><sup>mid</sup> = x<sub>l</sub><sup>pre</sup> + Δ<sub>l</sub><sup>A</sup><br><br>x<sub>l</sub><sup>out</sup> = x<sub>l</sub><sup>mid</sup> + Δ<sub>l</sub><sup>M</sup><br><br>x<sub>l</sub><sup>out</sup> = x<sub>l+1</sub><sup>pre</sup></div>
+  <p>Full token positions are retained, including beginning-of-sequence position, prefill tokens, and generated tokens. The generated continuation is produced deterministically and then the complete prompt-plus-output sequence is passed once through the causal model with hooks active.</p>
+
+  <h2>Primary radial observables</h2>
+  <div class="equation">r<sub>i,p,l</sub> = ‖x<sub>i,p,l</sub>‖, &nbsp;&nbsp;&nbsp; y<sub>i,p,l</sub> = log r<sub>i,p,l</sub>.</div>
+  <p>The empirical object is the ordered sequence of layer-conditioned distributions, not merely the mean norm curve. Analysis targets centres, widths, shapes, overlap, contraction and expansion, and persistence or reorganization across depth.</p>
+
+  <h2>Transition diagnostic</h2>
+  <p>With:</p>
+  <div class="equation">y<sub>l+1</sub> = y<sub>l</sub> + d<sub>l</sub>,</div>
+  <p>the variance identity is:</p>
+  <div class="equation">Var(y<sub>l+1</sub>) = Var(y<sub>l</sub>) + Var(d<sub>l</sub>) + 2Cov(y<sub>l</sub>, d<sub>l</sub>).</div>
+  <p>Contractive transitions therefore provide a stronger test than simple growth. Where Var(y<sub>l+1</sub>) &lt; Var(y<sub>l</sub>), inherited radial position and subsequent radial increment must be sufficiently negatively related.</p>
+
+  <h2>Context-conditioned sub-schedules</h2>
+  <p>A candidate sub-schedule must be more than a different global slope. The planned operational test removes the dominant depth trajectory together with prompt-specific offset and slope:</p>
+  <div class="equation">e<sub>i,l</sub> = y<sub>i,l</sub> − μ<sub>l</sub> − α<sub>i</sub> − β<sub>i</sub>l.</div>
+  <p>Candidate sub-schedules are contiguous residual excursions that depart, persist across depth, and potentially reintegrate.</p>
+
+  <h2>Frozen prompt regime</h2>
+  <p>The planned principal harvest contains <strong>516 prompts</strong>:</p>
+  <ul>
+    <li><strong>Suite 1 — 260 prompts:</strong> 100 recovered matched prompts plus 160 controlled prompts covering relational QA, paraphrase, coherence/nonsense, sequence-position and length structure, and output-length controls.</li>
+    <li><strong>Suite 2 — 256 prompts:</strong> flexible-generalization conditions, published and matched arithmetic, natural-language arithmetic, two-hop tasks, mixed-operation chains, and explicit legacy arithmetic probes.</li>
+  </ul>
+  <p>For tasks with known answers, expected answer, actual continuation, and correctness are preserved so analysis can distinguish a <strong>task-evoked trajectory</strong> from <strong>successful task execution</strong>.</p>
+
+  <h2>Validation and falsification pressure</h2>
+  <p>Large-scale extraction proceeds only after residual reconstruction succeeds. The analysis is intended to test whether the proposed schedule replicates across token positions, prompts, and model families, and whether apparent sub-schedules survive controls for simple location, slope, lexical identity, and positional structure.</p>
+  <p>A useful outcome includes revision or narrowing of the theory. Failure to find reproducible regime structure beyond known mean growth, failure of candidate contraction/reorganization patterns to replicate, or collapse of proposed sub-schedules under appropriate controls would count against stronger formulations.</p>
+
+  <p class="small">Repository sources: <a href="https://github.com/dpatz46-ui/scheduled-transformer-hypothesis/blob/main/methods/EXPERIMENT_PLAN.md">EXPERIMENT_PLAN.md</a> and <a href="https://github.com/dpatz46-ui/scheduled-transformer-hypothesis/blob/main/methods/EXTRACTION_PROTOCOL.md">EXTRACTION_PROTOCOL.md</a>.</p>
+</main>
+<footer>
+  <p>© 2026 Dustin Patzer. Substantive research content: CC BY-NC 4.0.</p>
+  <p><a href="index.html">Home</a> · <a href="proposal.html">Hypothesis statement</a></p>
+</footer>
+</body>
+</html>
