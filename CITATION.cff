@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use or discuss this work, please cite this release."
+title: "The Scheduled Transformer: A Hypothesis of Depth-Indexed State Regimes in Pre-RMSNorm Language Models"
+type: article
+version: 0.1.0
+date-released: 2026-09-22
+authors:
+  - family-names: "Patzer"
+    given-names: "Dustin"
+    affiliation: "Independent Researcher"
+# identifiers:
+#   - type: doi
+#     value: "10.xxxx/xxxxx"
+# repository-code: "https://github.com/USERNAME/scheduled-transformer-hypothesis"
+abstract: >-
+  The Scheduled Transformer hypothesis proposes that modern pre-normalized
+  transformer language models traverse a reproducible, ordered sequence of
+  depth-indexed state regimes. Preliminary primary-data analyses strongly
+  support structured residual-stream scheduling beyond simple monotonic norm
+  growth. This release states the hypothesis and pre-specifies a confirmatory
+  empirical program based on full token-level residual-state extraction.
+keywords:
+  - transformers
+  - residual stream
+  - representation geometry
+  - interpretability
+  - depth
+  - language models
